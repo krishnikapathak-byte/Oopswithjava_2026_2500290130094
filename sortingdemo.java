@@ -29,6 +29,13 @@ class CustomComparator implements Comparator<Student>{
         return o1.rollno - o2.rollno;
     }
 }
+
+class NameComparator implements Comparator<Student>{
+    @Override
+    public int compare(Student o1, Student o2) {
+        return o1.name.compareTo(o2.name);
+    }
+}
 public class sortingdemo {
     public static void main(String[] args) {
         ArrayList<Integer> i = new ArrayList<>();
@@ -56,6 +63,8 @@ public class sortingdemo {
         st.sort(new CustomComparator());
         System.out.println(st);
 
+        st.sort(new NameComparator());
+        System.out.println(st);
     }
         
 
